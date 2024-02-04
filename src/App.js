@@ -19,7 +19,7 @@ const App = () => {
   const moon = useRef(null);
   const isSceneInitialized = useRef(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [showChangeTexture, setShowChangeTexture] = useState(false); // Added state for texture change button
+ 
 
   useEffect(() => {
     if (!isSceneInitialized.current && sceneRef.current) {
@@ -94,19 +94,6 @@ const App = () => {
   // Toggle dropdown visibility
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
-  };
-
-  // Toggle texture change button visibility
-  const toggleChangeTexture = () => {
-    setShowChangeTexture(!showChangeTexture);
-  };
-
-  // Change moon texture
-  const changeTexture = () => {
-    // Replace this with code to load a different texture
-    const newTexture = new THREE.TextureLoader().load("/new_texture.jpg");
-    moon.current.material.map = newTexture;
-    moon.current.material.needsUpdate = true;
   };
 
   return (
